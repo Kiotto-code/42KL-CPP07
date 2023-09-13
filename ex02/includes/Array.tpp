@@ -1,37 +1,40 @@
-#include "Array.hpp"
+#ifndef ARRAY_TPP
+# define ARRAY_TPP
 
 template <typename T>
 Array<T>::Array()
 {
-	m_array = nullptr;
+	this->len = 0;
+	this->m_array = new T[0];
 }
 
 template <typename T>
 Array<T>::Array(unsigned size)
 {
+	this->len = size;
 	m_array = new int[size];
 }
 
 template <typename T>
-Array<T>::Array(const Array &src)
+Array<T>::Array(Array const &src)
 {
-	this->data = new T[src.len];
+	this->m_array = new T[src.len];
 	this->len = src.len;
 
 	for (unsigned int i = 0; i < len; i++)
-		this->data[i] = src.data[i];
+		this->m_array[i] = src.m_array[i];
 }
 
 template <typename T>
 Array<T> &Array<T>::operator = (Array const &src)
 {
-	if (this->data != NULL)
-		delete[] this->data;
-	this->data = new T[src.len];
+	if (this->m_array != NULL)
+		delete[] this->m_array;
+	this->m_array = new T[src.len];
 	this->len = src.len;
 
 	for (unsigned int i = 0; i < len; i++)
-		this->data[i] = src.data[i];
+		this->m_array[i] = src.m_array[i];
 	
 	return *this;
 }
@@ -59,5 +62,7 @@ const T *Array<T>::getArray(void) const
 template<typename T>
 const char* Array<T>::OutOfBoundsException::what() const throw()
 {
-	return "Array out of bounds";
+	return "Index is out of bounds";
 }
+
+#endif

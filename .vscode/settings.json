@@ -59,7 +59,8 @@
     "utility": "cpp",
     "vector": "cpp",
     "complex": "cpp",
-    "sstream": "cpp"
+    "sstream": "cpp",
+    "*.tpp": "cpp"
   },
   "C_Cpp_Runner.cCompilerPath": "clang",
   "C_Cpp_Runner.cppCompilerPath": "clang++",

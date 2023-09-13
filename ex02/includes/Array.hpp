@@ -11,8 +11,8 @@ class Array{
 
 	public:
 		Array();
-		Array(unsigned);
-		Array(const Array &src);
+		Array(unsigned int);
+		Array(Array const &src);
 		~Array();
 
 		const T *getArray(void) const;
@@ -26,5 +26,8 @@ class Array{
 				virtual const char *what() const throw();
 		};
 };
+
+#include "Array.tpp"
+
 
 #endif
