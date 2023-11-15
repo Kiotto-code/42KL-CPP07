@@ -20,6 +20,8 @@ class Array{
 		Array &operator = (Array const &src);
 		T &operator [] (int i);
 
+		unsigned int size() const;
+
 		class OutOfBoundsException: public std::exception
 		{
 			public:

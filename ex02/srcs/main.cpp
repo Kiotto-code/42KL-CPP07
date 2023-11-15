@@ -32,13 +32,15 @@ int main(int, char**)
     {
         if (mirror[i] != numbers[i])
         {
-            std::cerr << "didn't save the same value!!" << std::endl;
+            std::cerr << "the value different!" << std::endl;
             return 1;
         }
     }
+    printf("OK, The value is the same\n");
     try
     {
-        numbers[-2] = 0;
+        numbers[-1] = 0;
+        printf("wrong success\n");
     }
     catch(const std::exception& e)
     {
@@ -47,6 +49,7 @@ int main(int, char**)
     try
     {
         numbers[MAX_VAL] = 0;
+        printf("wrong success\n");
     }
     catch(const std::exception& e)
     {
@@ -57,6 +60,7 @@ int main(int, char**)
     {
         numbers[i] = rand();
     }
+    printf("array modified Success\n");
     delete [] mirror;//
     return 0;
 }

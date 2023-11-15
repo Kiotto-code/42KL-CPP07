@@ -40,6 +40,12 @@ Array<T> &Array<T>::operator = (Array const &src)
 }
 
 template<typename T>
+unsigned int Array<T>::size() const
+{
+	return this->len;
+}
+
+template<typename T>
 T& Array<T>::operator[](int i)
 {
 	if (i < 0 || i >= static_cast<int>(this->len))
@@ -51,6 +57,7 @@ template <typename T>
 Array<T>::~Array()
 {
 	std::cout << "[Array] destructor being called" << std::endl;
+	delete[] this->m_array;
 }
 
 template <typename T>
