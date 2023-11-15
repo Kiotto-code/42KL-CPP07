@@ -21,7 +21,6 @@ void swap (T &a, T &b)
 template<typename T>
 T min (T num1, T num2)
 {
-	std::cout << "chibai " << std::endl;
 	return ((num1 > num2)? num2: num1);
 }
 
