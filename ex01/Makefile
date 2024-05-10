@@ -77,6 +77,7 @@ all				:	$(NAME)
 
 $(NAME)			:	$(OBJS)
 					$(CXX) $(CXXFLAG) -I$(INCLUDES) $^ -o $@
+					 @echo "The program name is $(RED)./$(NAME) $(RESET)"
 
 $(OBJS_PATH)/%.o:	$(SRCS_PATH)/%.cpp ./Makefile $(INCLUDES) | $(OBJS_PATH)
 # mkdir -p $(@D)
