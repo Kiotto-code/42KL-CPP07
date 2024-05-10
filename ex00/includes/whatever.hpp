@@ -2,6 +2,7 @@
 # define WHATEVER_HPP
 
 # include <iostream>
+# include "Color.hpp"
 
 // template<typename T1, typename T2>
 // void swap (T1 &a, T2 &b)
@@ -21,7 +22,6 @@ void swap (T &a, T &b)
 template<typename T>
 T min (T num1, T num2)
 {
-	std::cout << "chibai " << std::endl;
 	return ((num1 > num2)? num2: num1);
 }
 

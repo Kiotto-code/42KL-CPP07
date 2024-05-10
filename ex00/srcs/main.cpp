@@ -13,8 +13,8 @@ int	main( void )
 
 	}
 	{
-		std::string c = "first";
-		std::string d = "second";
+		std::string c = "chaine1";
+		std::string d = "chaine2";
 		
 		swap(c, d);
 		std::cout << "c = " << c << ", d = " << d << std::endl;

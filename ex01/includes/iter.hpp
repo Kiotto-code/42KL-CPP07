@@ -1,8 +1,8 @@
 #ifndef ITER_HPP
 # define ITER_HPP
 
-
 # include <iostream>
+# include "Color.hpp"
 
 template <typename T, typename F>
 // void iter(T *arr, unsigned arr_len, F func)

@@ -6,13 +6,13 @@
 #    By: yichan <yichan@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/23 17:19:00 by yichan            #+#    #+#              #
-#    Updated: 2023/09/10 23:17:01 by yichan           ###   ########.fr        #
+#    Updated: 2024/05/08 01:15:42 by yichan           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			= a.out
 CXX				= c++
-CXXFLAGS		= -Wall -Werror -Wextra -g3 -std=c++98 -fsanitize=address
+CXXFLAGS		= -Wall -Werror -Wextra -g3 -std=c++98 #-fsanitize=address
 INCLUDES		= ./includes
 SRCS_PATH		= ./srcs
 OBJS_PATH		= ./objs

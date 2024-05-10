@@ -2,6 +2,9 @@
 # define ARRAY_HPP
 
 # include <iostream>
+# include <cstdlib>
+# include "Color.hpp"
+# include "Test.hpp"
 
 template <typename T>
 class Array{
@@ -19,6 +22,8 @@ class Array{
 
 		Array &operator = (Array const &src);
 		T &operator [] (int i);
+
+		unsigned int size() const;
 
 		class OutOfBoundsException: public std::exception
 		{
