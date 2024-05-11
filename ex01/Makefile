@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # # **************************************************************************** #
 # #                                                                              #
 # #                                                         :::      ::::::::    #
@@ -65,6 +66,30 @@ OBJS_PATH		=	./objs
 # SRCS			=	$(wildcard $(SRCS_PATH)/*.cpp)
 SRCS			=	$(shell find $(SRCS_PATH) -name "*.cpp")
 OBJS			=	$(patsubst $(SRCS_PATH)/%.cpp, $(OBJS_PATH)/%.o, $(SRCS))
+=======
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: yichan <yichan@student.42.fr>              +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/08/23 17:19:00 by yichan            #+#    #+#              #
+#    Updated: 2023/11/15 17:11:34 by yichan           ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+NAME			= a.out
+CXX				= c++
+CXXFLAGS		= -Wall -Werror -Wextra -g3 -std=c++98 -fsanitize=address
+INCLUDES		= ./includes
+SRCS_PATH		= ./srcs
+OBJS_PATH		= ./objs
+# SRCS			= $(wildcard $(SRCS_PATH)/*.cpp)
+SRCS			= $(shell find $(SRCS_PATH) -name "*.cpp")
+OBJS			= $(patsubst $(SRCS_PATH)/%.cpp, $(OBJS_PATH)/%.o, $(SRCS))
+# OBJS	= $(addprefix $(OBJ_PATH)/,$(patsubst %.cpp,%.o,$(notdir $(SRCS))))
+>>>>>>> a0381386a1fede9eb7016bb15a5cb000d273f0b4
 
 RESET		=	\033[0m
 GREEN		=	\033[38;5;46m

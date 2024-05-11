@@ -1,0 +1,5 @@
+*.o
+.vscode
+tempCodeRunnerFile
+a.out
+*.sh
