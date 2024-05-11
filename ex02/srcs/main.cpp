@@ -4,58 +4,61 @@
 #include "Array.hpp"
 
 #define MAX_VAL 750
-// int main(int, char**)
-// {
-//     Array<int> numbers(MAX_VAL);
-//     int* mirror = new int[MAX_VAL];
-//     srand(time(NULL));
-//     for (int i = 0; i < MAX_VAL; i++)
-//     {
-//         const int value = rand();
-//         numbers[i] = value;
-//         mirror[i] = value;
-//     }
-//     {
-//         Array<int> tmp = numbers;
-//         Array<int> test(tmp);
-//     }
-//     for (int i = 0; i < MAX_VAL; i++)
-//     {
-//         if (mirror[i] != numbers[i])
-//         {
-//             std::cerr << "the value different!" << std::endl;
-//             return 1;
-//         }
-//     }
-//     std::cout << ("OK, The value is the same\n") << std::endl;
-//     try
-//     {
-//         numbers[-1] = 0;
-//         std::cout << ("wrong success\n");
-//     }
-//     catch(const std::exception& e)
-//     {
-//         std::cerr << e.what() << '\n';
-//     }
-//     try
-//     {
-//         numbers[MAX_VAL] = 0;
-//         std::cout << ("wrong success\n");
-//     }
-//     catch(const std::exception& e)
-//     {
-//         std::cerr << e.what() << '\n';
-//     }
-//     for (int i = 0; i < MAX_VAL; i++)
-//     {
-//         numbers[i] = rand();
-//     }
-//     std::cout << ("array modified Success\n");
-//     delete [] mirror;//
-// 	cterm();
-// 	system("leaks a.out");
-//     return 0;
-// }
+int fundamental_test(void)
+{
+    Array<int> numbers(MAX_VAL);
+    int* mirror = new int[MAX_VAL];
+    srand(time(NULL));
+    for (int i = 0; i < MAX_VAL; i++)
+    {
+        const int value = rand();
+        numbers[i] = value;
+        mirror[i] = value;
+    }
+    {
+        Array<int> tmp = numbers;
+        Array<int> test(tmp);
+    }
+    for (int i = 0; i < MAX_VAL; i++)
+    {
+		std::cout << LIGHT_GREEN"numbers[" << std::setw(3) <<  i << "] = " << std::setw(20) <<  numbers[i] << " | ";
+		std::cout << LIGHT_YELLOW"mirror[" << std::setw(3) << i << "] = " << std::setw(20) <<  mirror[i] << std::endl;
+		std::cout << RESET;
+        if (mirror[i] != numbers[i])
+        {
+            std::cerr << "the value different!" << std::endl;
+            return 1;
+        }
+    }
+    std::cout << ("OK, The value is the same\n") << std::endl;
+    try
+    {
+        numbers[-1] = 0;
+        std::cout << ("wrong success\n");
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    try
+    {
+        numbers[MAX_VAL] = 0;
+        std::cout << ("wrong success\n");
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    for (int i = 0; i < MAX_VAL; i++)
+    {
+        numbers[i] = rand();
+    }
+    std::cout << ("array modified Success\n");
+    delete [] mirror;//
+	cterm();
+	system("leaks a.out");
+    return 0;
+}
 
 void emptyArrayLeaksTest()
 {
@@ -67,6 +70,8 @@ void emptyArrayLeaksTest()
 
 int main(void)
 {
+	fundamental_test();
+	cterm();
     {
         TEST_TITLE("Test 0: Empty array");
         TEST_DESC("Creates an empty array using default constructor.");
